@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mon site GitHub Pages</title>
+  <meta name="description" content="Site statique déployé sur GitHub Pages" />
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--accent:#06b6d4;--muted:#94a3b8}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;background:linear-gradient(180deg,var(--bg),#071028);color:#fff;line-height:1.5}
+    .container{max-width:980px;margin:32px auto;padding:24px}
+    header{display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:700}
+    nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+    .hero{display:grid;grid-template-columns:1fr;gap:20px;background:rgba(255,255,255,0.02);padding:28px;border-radius:14px;margin-top:24px}
+    h1{margin:0;font-size:clamp(1.6rem,3vw,2.4rem)}
+    p.lead{color:var(--muted);margin:8px 0 0}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:20px}
+    .card{background:var(--card);padding:18px;border-radius:12px}
+    footer{margin-top:28px;color:var(--muted);font-size:0.9rem;text-align:center}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#7c3aed);color:#041024;text-decoration:none;font-weight:600}
+    @media(min-width:720px){ .hero{grid-template-columns:1fr 360px} }
+    input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:inherit}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">SG</div>
+        <div>
+          <strong>Mon site</strong><br>
+          <small style="color:var(--muted)">Simple & rapide - GitHub Pages</small>
+        </div>
+      </div>
+      <nav>
+        <a href="#">Accueil</a>
+        <a href="#about">À propos</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main class="hero">
+      <section>
+        <h1>Bienvenue sur mon site déployé avec GitHub Pages</h1>
+        <p class="lead">Ceci est un site statique prêt à être personnalisé : remplacez le texte, changez les couleurs, ajoutez des pages. Déployez en quelques étapes sur GitHub.</p>
+
+        <div class="grid">
+          <div class="card">
+            <h3>Pourquoi GitHub Pages ?</h3>
+            <p style="color:var(--muted)">Déploiement gratuit pour sites statiques, intégration Git, facile à configurer pour des portfolios, documentations et blogs simples.</p>
+          </div>
+          <div class="card">
+            <h3>Compatibilité</h3>
+            <p style="color:var(--muted)">Aucun build nécessaire — parfait pour HTML/CSS/JS. Utilisez docs/ si vous préférez garder la racine propre.</p>
+          </div>
+          <div class="card">
+            <h3>Personnaliser</h3>
+            <p style="color:var(--muted)">Ajoutez un fichier <code>CNAME</code> pour un domaine personnalisé, ou configurez GitHub Actions pour des déploiements avancés.</p>
+          </div>
+        </div>
+
+      </section>
+
+      <aside class="card">
+        <h3 id="about">À propos</h3>
+        <p style="color:var(--muted)">Petit site d'exemple qui montre une mise en page moderne et responsive. Modifiez ce bloc pour présenter votre projet.</p>
+
+        <div style="margin-top:12px">
+          <a class="btn" href="#contact">Me contacter</a>
+        </div>
+      </aside>
+    </main>
+
+    <section style="margin-top:20px">
+      <div class="card">
+        <h3 id="contact">Contact</h3>
+        <p style="color:var(--muted)">Envoyez-moi un message — lien mailto ci-dessous (remplacez par votre adresse).</p>
+        <form action="mailto:you@example.com" method="post" enctype="text/plain" onsubmit="alert('Ce formulaire ouvre votre client mail. Pour un vrai formulaire, utilisez un backend ou un service tiers.');">
+          <input type="text" name="name" placeholder="Votre nom" required />
+          <div style="height:8px"></div>
+          <input type="email" name="email" placeholder="Votre email" required />
+          <div style="height:8px"></div>
+          <textarea name="message" rows="4" placeholder="Votre message"></textarea>
+          <div style="height:8px"></div>
+          <button class="btn" type="submit">Envoyer</button>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <p>© <span id="year"></span> Mon site • Déployé avec GitHub Pages</p>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
